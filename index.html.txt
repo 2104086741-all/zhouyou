@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专注搜索</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f5f6f7; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; height: 90vh; }
+        .card { background: white; width: 100%; max-width: 360px; padding: 24px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); box-sizing: border-box; }
+        h2 { text-align: center; color: #333; font-size: 18px; margin-top: 0; margin-bottom: 20px; }
+        input { width: 100%; padding: 14px; font-size: 16px; border: 2px solid #e1e2e5; border-radius: 10px; outline: none; box-sizing: border-box; margin-bottom: 16px; }
+        input:focus { border-color: #007aff; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        button { padding: 14px; font-size: 15px; font-weight: 600; border: none; border-radius: 10px; color: white; cursor: pointer; }
+        .bili { background-color: #fb7299; }
+        .xhs { background-color: #ff2442; }
+        .zhihu { background-color: #0066ff; }
+        .douyin { background-color: #161823; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>🎯 专注直达搜索</h2>
+    <input type="text" id="kw" placeholder="输入要搜索的内容..." autofocus>
+    <div class="grid">
+        <button class="bili" onclick="go('bili')">哔哩哔哩</button>
+        <button class="xhs" onclick="go('xhs')">小红书</button>
+        <button class="zhihu" onclick="go('zhihu')">知乎</button>
+        <button class="douyin" onclick="go('douyin')">抖音</button>
+    </div>
+</div>
+<script>
+    function go(type) {
+        let text = document.getElementById('kw').value.trim();
+        if(!text) { alert('请输入关键词'); return; }
+        let q = encodeURIComponent(text);
+        let urls = {
+            bili: `https://search.bilibili.com/all?keyword=${q}`,
+            xhs: `https://www.xiaohongshu.com/search_result?keyword=${q}`,
+            zhihu: `https://www.zhihu.com/search?type=content&q=${q}`,
+            douyin: `https://www.douyin.com/search/${q}`
+        };
+        window.location.href = urls[type];
+    }
+</script>
+</body>
+</html>
