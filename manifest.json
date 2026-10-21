@@ -1,0 +1,13 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "focus search",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "搜飕飕",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "description": "无干扰直达各大平台搜索结果",
+  "id": "/index.html"
+}
