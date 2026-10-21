@@ -8,9 +8,15 @@
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "https://api.iconify.design/lucide:search.svg",
-      "sizes": "192x192 512x512",
-      "type": "image/svg+xml",
+      "src": "https://img.icons8.com/fluency/512/search.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://img.icons8.com/fluency/192/search.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]
